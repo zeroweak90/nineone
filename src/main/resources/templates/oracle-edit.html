@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head><title>Edit Oracle Member</title></head>
+<body>
+<h2>Edit Oracle Member</h2>
+<form th:action="@{/view/oracle/edit/{id}(id=${member.id})}" method="post">
+    <input type="text" name="name" th:value="${member.name}" />
+    <button type="submit">Update</button>
+</form>
+<a th:href="@{/view/oracle}">Back</a>
+</body>
+</html>

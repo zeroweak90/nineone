@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head><title>Edit MySQL Member</title></head>
+<body>
+<h2>Edit MySQL Member</h2>
+<form th:action="@{/view/mysql/edit/{id}(id=${member.id})}" method="post">
+    <input type="text" name="name" th:value="${member.name}" />
+    <button type="submit">Update</button>
+</form>
+<a th:href="@{/view/mysql}">Back</a>
+</body>
+</html>

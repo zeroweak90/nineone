@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head><title>Oracle Members</title></head>
+<body>
+<h2>Oracle Members</h2>
+
+<form th:action="@{/view/oracle/add}" method="post">
+    <input type="text" name="name" placeholder="Name"/>
+    <button type="submit">Add</button>
+</form>
+
+<ul>
+    <li th:each="member : ${oracleMembers}">
+        <span th:text="${member.name}">Name</span>
+
+        <!-- ✅ 수정 버튼 추가 -->
+        <a th:href="@{/view/oracle/edit/{id}(id=${member.id})}">Edit</a>
+
+        <form th:action="@{/view/oracle/delete/{id}(id=${member.id})}" method="post" style="display:inline;">
+            <button type="submit">Delete</button>
+        </form>
+    </li>
+</ul>
+
+</body>
+</html>

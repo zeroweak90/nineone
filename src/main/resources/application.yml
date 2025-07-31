@@ -1,0 +1,30 @@
+spring:
+  datasource:
+    mysql:
+      url: jdbc:mysql://localhost:3306/spring
+      username: admin
+      password: Admin!234
+      driver-class-name: com.mysql.cj.jdbc.Driver
+
+    oracle:
+      url: jdbc:oracle:thin:@localhost:1521/XEPDB1
+      username: system
+      password: Admin1234
+      driver-class-name: oracle.jdbc.OracleDriver
+
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+
+mysql:
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL8Dialect
+
+oracle:
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.Oracle12cDialect
